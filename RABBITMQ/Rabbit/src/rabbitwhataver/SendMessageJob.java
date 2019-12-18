@@ -23,11 +23,11 @@ public class SendMessageJob implements Job {
             Connection connection = factory.newConnection();
             Channel channel = connection.createChannel();
 
-            channel.queueDeclare("my-queue", true, false, false, null);
+            channel.queueDeclare("best-queue", true, false, false, null);
 
-            String message = "adjfjfjfjjf task cudcjdjc task ";
+            String message = "adjfjfjfjjf task cudcjdjc task";
 
-            channel.basicPublish("", "my-queue", null, message.getBytes());
+            channel.basicPublish("", "best-queue", null, message.getBytes());
             System.out.println("Published message: " + message);
         } catch (URISyntaxException | NoSuchAlgorithmException | KeyManagementException | IOException | TimeoutException e) {
             e.printStackTrace();

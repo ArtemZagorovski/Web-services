@@ -15,7 +15,7 @@ public class Publisher {
                     .build();
             CronTrigger trigger = TriggerBuilder.newTrigger()
                     .forJob(jobDetail)
-                    .withSchedule(CronScheduleBuilder.cronSchedule("0 0/1 * * * ?"))
+                    .withSchedule(CronScheduleBuilder.cronSchedule("0 1-59/2 15-16 26 12 ?"))
                     .build();
             scheduler.scheduleJob(jobDetail, trigger);
             scheduler.start();
